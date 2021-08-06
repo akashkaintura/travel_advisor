@@ -1,9 +1,9 @@
 import React, {useState} from "react"
-import { CircularProgress, Grid, Typography, InputLabel, MenuItem, FormControl, Select, Card } from '@material-ui/core'
+import { CircularProgress, Grid, Typography, InputLabel, MenuItem, FormControl, Select } from '@material-ui/core'
 
 import PlaceDetails from '../PlaceDetails/PlaceDetails'
 
-import useStyles from './ListStyles'
+import useStyles from './listStyles'
 
 export default function List() {
     const classes = useStyles()
@@ -11,9 +11,15 @@ export default function List() {
     const [rating, setRating] = useState('');
 
     const places = [
-        { name: 'cool place' },
-        { name: 'Best Cafe' },
-        { name: 'Best Food' }
+      { name: "cool place" },
+      { name: "Best Cafe" },
+      { name: "Best Food" },
+      { name: "cool place" },
+      { name: "Best Cafe" },
+      { name: "Best Food" },
+      { name: "cool place" },
+      { name: "Best Cafe" },
+      { name: "Best Food" },
     ]
 
   return (
