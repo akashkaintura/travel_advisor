@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 import React, { useState, useEffect, createRef } from "react"
 import {
   CircularProgress,
@@ -9,7 +10,7 @@ import {
   Select,
 } from "@material-ui/core"
 
-import PlaceDetails from "../PlaceDetails/PlaceDetails"
+
 import useStyles from "./styles.js"
 
 const List = ({
@@ -21,12 +22,13 @@ const List = ({
   childClicked,
   isLoading,
 }) => {
-  const [elRefs, setElRefs] = useState([])
   const classes = useStyles()
+  const [elRefs, setElRefs] = useState([]);
+  
 
   useEffect(() => {
     setElRefs((refs) =>
-      Array(places.length)
+      Array(places?.length)
         .fill()
         .map((_, i) => refs[i] || createRef())
     )
@@ -81,4 +83,4 @@ const List = ({
   )
 }
 
-export default List
+export default List;
