@@ -6,6 +6,7 @@ import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined"
 import Rating from "@material-ui/lab/Rating"
 
 import useStyles from "./styles.js"
+import MapStyles from './mapStyles'
 
 const Map = ({
   coords,
@@ -73,7 +74,7 @@ const Map = ({
           ))}
         {weatherData?.list?.length &&
           weatherData.list.map((data, i) => (
-            <div key={i} lat={data.coord.lat} lng={data.coord.lon}>
+            <div key={i} lat={data.coord.lat} lng={data.coord.lng}>
               <img
                 src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`}
                 height="70px"
