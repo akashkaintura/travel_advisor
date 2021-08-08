@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import axios from "axios"
 
 export const getPlacesData = async (type, sw, ne) => {
@@ -32,7 +33,7 @@ export const getWeatherData = async (lat, lng) => {
       const { data } = await axios.get(
         "https://community-open-weather-map.p.rapidapi.com/find",
         {
-          params: { lat: lat, lon: lng },
+          params: { lat, lon: lng },
           headers: {
             "x-rapidapi-key": process.env.REACT_APP_RAPIDAPI_KEY,
             "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
@@ -46,3 +47,5 @@ export const getWeatherData = async (lat, lng) => {
     console.log(error)
   }
 }
+
+//REACT_APP_RAPIDAPI_KEY

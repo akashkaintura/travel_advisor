@@ -5,8 +5,8 @@ import { Paper, Typography, useMediaQuery } from "@material-ui/core"
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined"
 import Rating from "@material-ui/lab/Rating"
 
+import mapStyles from "../../mapStyles"
 import useStyles from "./styles.js"
-import MapStyles from './mapStyles'
 
 const Map = ({
   coords,
@@ -16,8 +16,8 @@ const Map = ({
   setChildClicked,
   weatherData,
 }) => {
-  const matches = useMediaQuery('(min-width:600px)');
-  const classes = useStyles();
+  const matches = useMediaQuery("(min-width:600px)")
+  const classes = useStyles()
 
   return (
     <div className={classes.mapContainer}>
@@ -30,7 +30,7 @@ const Map = ({
         options={{
           disableDefaultUI: true,
           zoomControl: true,
-          styles: useStyles,
+          styles: mapStyles,
         }}
         onChange={(e) => {
           setCoords({ lat: e.center.lat, lng: e.center.lng })
@@ -52,6 +52,7 @@ const Map = ({
                     className={classes.typography}
                     variant="subtitle2"
                     gutterBottom>
+                    {" "}
                     {place.name}
                   </Typography>
                   <img
@@ -74,7 +75,7 @@ const Map = ({
           ))}
         {weatherData?.list?.length &&
           weatherData.list.map((data, i) => (
-            <div key={i} lat={data.coord.lat} lng={data.coord.lng}>
+            <div key={i} lat={data.coord.lat} lng={data.coord.lon}>
               <img
                 src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`}
                 height="70px"
@@ -86,4 +87,4 @@ const Map = ({
   )
 }
 
-export default Map;
+export default Map

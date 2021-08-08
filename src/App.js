@@ -45,13 +45,13 @@ const App = () => {
       )
 
       getPlacesData(type, bounds.sw, bounds.ne).then((data) => {
-        // setPlaces(data.filter((place) => place.name && place.num_reviews > 0))
+        setPlaces(data.filter((place) => place.name && place.num_reviews > 0))
         setFilteredPlaces([])
         setRating("")
         setIsLoading(false)
       })
     }
-  }, [type, bounds])
+  }, [bounds, type])
 
   const onLoad = (autoC) => setAutocomplete(autoC)
 
@@ -101,4 +101,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
