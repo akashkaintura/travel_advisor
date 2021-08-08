@@ -1,4 +1,4 @@
-# Travel Advisor
+# Travel JUNKY
 
 ### https://travel-junky.netlify.app/
 
