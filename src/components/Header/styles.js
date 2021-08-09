@@ -7,6 +7,11 @@ export default makeStyles((theme) => ({
       display: "block",
     },
   },
+  button: {
+    position: "relative",
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
+  },
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
